@@ -4,16 +4,16 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Better Web Debugging: a Developer Tools Workshop</title>
+		<title>Learn to Debug Your Code with Chrome Dev Tools</title>
 
-		<meta name="description" content="Slides and class notes for GDI Burlington’s Developer Tools 2.5 hour workshop. Materials by Rachael Arnold.">
+		<meta name="description" content="Slides and class notes for Girl Develop It's Developer Tools workshop. Materials based on original material by Rachael Arnold of GDI Burlington.">
 		<meta name="author" content="Girl Develop It">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/gdidefault.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
 		<link rel="stylesheet" href="css/class.css">
 
 		<!-- For syntax highlighting -->
@@ -58,49 +58,48 @@
 	<body>
 
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-        
+
 				<!-- Class Intro -->
 				<section>
-					<h1>Better Web Debugging</h1>
-					<h3>a Developer Tools Workshop</h3>
+					<h2>Learn to Debug Your Code </h2>
+					<h3>with Chrome Developer Tools</h3>
+					<img src="img/circle-gdi-logo.png" alt="GDI Logo" class="noborder" style="max-height:400px;">
 					<!-- CUSTOMIZE ME! -->
 					<p><br>Follow along in Google Chrome at
-						<br><a href="gdibtv.github.io/gdi-developer-tools/">gdibtv.github.io/gdi-developer-tools</a></p>
+						<br><a href="gdibtv.github.io/gdi-developer-tools/">jennifer-mann.github.io/gdi-developer-tools</a></p>
 
 					<aside class="notes" data-markdown>
 						Before starting, open Network tab and reload so we track it all and don't have to refresh later to demo. Then open slide notes!
 					</aside>
 				</section>
-       
+
 				<section>
-					<h3>Welcome!</h3>
-					<div class="left-align">
-						<p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
-						<p class="green">Some "rules"</p>
-						<ul>
-							<li>We are here for you!</li>
-							<li>Every question is important</li>
-							<li>Help each other</li>
-							<li>Have fun</li>
-						</ul>
-					</div>
+				  <h3>Welcome!</h3>
+				  <div class = "left-align">
+				  <p><b>Girl Develop It</b> is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p><br>
+				  <h4>Some "rules"</h4>
+				  <ul>
+				    <li>We are here for you!</li>
+				    <li>Every question is important.</li>
+				    <li>Help each other.</li>
+				    <li>Have fun.</li>
+				  </ul>
+				  </div>
 				</section>
 
-				<section class="hide-pdf">
-					<h3>Welcome!</h3>
-					<div class="left-align">
-						<p class="green">Tell us about yourself.</p>
-						<ul>
-							<li>Who are you?</li>
-							<li>What do you hope to get out of the workshop?</li>
-							<li>What is your go-to debugging comment?</li>
-						</ul>
-					</div>
+				<section>
+				  <h2>Welcome!</h2>
+			    <div class = "left-align">
+			      <h4>Tell us about yourself.</h4>
+			      <ul>
+			        <li>Who are you?</li>
+			        <li>What do you hope to get out of the class?</li>
+			        <!-- Feel free to change the icebreaker question! -->
+			        <li>If you could plan your ultimate vacation, where would you go?</li>
+			      </ul>
+			    </div>
 				</section>
-
 
 				<!-- History -->
 				<section>
@@ -108,14 +107,14 @@
 
 					<p>Debugging client-side code was hard for a long time.</p>
 					<p class="fragment">CSS had a lot of this:</p>
-<pre class="fragment"><code class="css">	div.classname {
-		outline: 1px solid green;
-	}
-	body {
-		background: red !important;
-	}
-</code></pre>
-					<p class="fragment">and JS had a lot of this:</p>
+<pre class="fragment"><code class="css">div.className {
+  border: 2px solid green;
+}
+
+body {
+  background: red !important;
+}</code></pre>
+					<p class="fragment">and JavaScript had a lot of this:</p>
 					<p class="fragment" id="alertMe"><small>( a.k.a. <code>alert();</code> all the things! )</small></p>
 
 					<aside class="notes" data-markdown>
@@ -126,9 +125,9 @@
 				<section>
 					<h3>Debugging, then</h3>
 					<p>So basically:</p>
-					<p>Inexact</p>
-					<p>Time-consuming</p>
-					<p><strong>Totally not fun</strong></p>
+					<p class="fragment">Inexact</p>
+					<p class="fragment">Time-consuming</p>
+					<p class="fragment"><strong>Totally not fun!</strong></p>
 				</section>
 
 				<section>
@@ -136,7 +135,7 @@
 					<p>Web debugging got infinitely better in early 2006.<br><br></p>
 					<p><a href="https://www.webkit.org/blog/41/introducing-the-web-inspector/" target="_blank">Webkit Introduced the “Web Inspector”</a></p>
 					<p>and</p>
-					<p><a href="http://joehewitt.com/2006/03/15/firebug-a-love-story" target="_blank">Joe Hewitt introduced Firebug for Firefox</a></p>
+					<p><a href="https://web.archive.org/web/20111012095901/http://joehewitt.com/2006/03/15/firebug-a-love-story" target="_blank">Joe Hewitt introduced Firebug for Firefox</a></p>
 					<p><br><br><small>IE didn’t have equivalent debugging tools until IE8 was released in 2009.</small></p>
 
 					<aside class="notes" data-markdown>
@@ -144,7 +143,7 @@
 
 						Most developers used Firebug, since at the time, Safari was just that browser that people use on those weird Mac computers.
 
-						As of this authoring (2015), all major browsers have access to feature-parity, but Chrome is the only one that is platform agnostic (compare IE/Safari) and doesn't rely on third-party plugins (Firebug/Firefox)
+						As of this authoring (2016), all major browsers have access to feature-parity, but Chrome is the only one that is platform agnostic (compare IE/Safari) and doesn't rely on third-party plugins (Firebug/Firefox)
 					</aside>
 				</section>
 
@@ -159,15 +158,15 @@
 					<h3>Debugging, now</h3>
 
 					<div class="left-align">
-						<p class="green">Chrome Developer Tools is…</p>
+						<h4>Chrome Developer Tools is…</h4>
 						<ul>
-							<li>a <abbr title="Document Object Model">DOM</abbr> inspector</li>
-							<li>a <abbr title="Document Object Model">DOM</abbr> manipulator</li>
+							<li>a Document Object Model (DOM) inspector</li>
+							<li>a DOM manipulator</li>
 							<li>an emulator</li>
-							<li>a Javascript <abbr title="Read-Evaluate-Print-Loop">REPL</abbr></li>
+							<li>a Javascript REPL</li>
 							<li>a debugger</li>
 							<li>a network profiler</li>
-							<li>an <abbr title="Integrated Development Environment">IDE</abbr>?</li>
+							<li>an IDE?</li>
 						</ul>
 						<p>… and more!</p>
 					</div>
@@ -188,7 +187,7 @@
 				<section>
 					<h3>Overview</h3>
 
-					<img src="img/devtools-overview-screencap-2.png" alt="Screencap of overall dev tools panel" width="70%">
+					<img src="img/devtools-overview-screencap-2.png" alt="Screencap of overall dev tools panel">
 
 				</section>
 
@@ -214,6 +213,7 @@
 
 					<img src="img/console-drawer.png" alt="Screencap of console in drawer" width="40%">
 					<img src="img/console-hidden.png" alt="Screencap of console hidden" width="40%">
+					<p><small>Mac: Esc <br>Win: Esc</small></p>
 
 					<aside class="notes" data-markdown>
 						Console can also be on its own tab, which we'll cover later.
@@ -226,7 +226,7 @@
 
 					<p>Settings</p>
 
-					<img src="img/settings-pane.png" alt="Screencap of settings" width="50%">
+					<img src="img/settings-pane.png" alt="Screencap of settings">
 
 					<aside class="notes" data-markdown>
 						No need to cover all the settings—people can play around on their own later.
@@ -246,9 +246,9 @@
 					<p>What is the DOM?</p>
 					<p>Think of it as your HTML&hellip;</p>
 					<p class="fragment">&hellip;+ anything JS adds.</p>
-					
+
 					<div class="fragment push">
-						<p>The <strong class="yellow">Elements</strong> Tab is a visual representation of how the browser sees the DOM.</p>
+						<p>The <strong class="yellow">Elements</strong> Tab is a visual representation of how the browser built the DOM.</p>
 						<p>You can explore the nested levels by clicking the arrows next to elements.</p>
 					</div>
 				</section>
@@ -279,7 +279,6 @@
 				</section>
 
 				<section>
-					<section>
 						<h3>CSS Debugging</h3>
 
 						<img src="img/inspecting-css.png" alt="Screencap of CSS pane" class="right"/>
@@ -292,8 +291,8 @@
 
 							Press down for slides on specificity, if time allows and audience needs that level of coverage
 						</aside>
-					</section>
-					<section>
+				</section>
+				<section>
 						<h3>CSS Specificity</h3>
 
 						<p><em class="yellow">Specificity</em> refers to how CSS rules are applied based on ordering, inheritance, and the cascade (the 'C' in CSS).</p>
@@ -306,41 +305,34 @@
 							<li>Anything with <code>!important</code> (most important)</li>
 						</ul>
 
-					</section>
+				</section>
 
-					<section>
+				<section>
 						<h3>CSS Specificity</h3>
 
 						<p>Order matters, so do selectors. Code as simply as possible. Complex selectors modify specificity in complex ways!</p>
 
 						<h4 class="push">The Basics: What's the Selector?</h4>
-						<ul>
-							<li>Tag (least important)
-<pre><code class="css">	div { color: lime; }
-</code></pre></li>
-							<li>Class, Attribute
-<pre><code class="css">	.orange { color: orange; }
-	[href^="http"] { color: purple; }
-</code></pre></li>
-							<li>ID
-<pre><code class="css">	#specialsnowflake { color: gray; }
-</code></pre></li>
-							<li>Inline style attribute (most important)
-<pre><code class="css">	style="color: black;"
-</code></pre></li>
-						</ul>
+						<pre><code class="html"><div id="special" class="orange" style="{color: black;}">Halp!</div></code></pre>
+						<pre><code class="css">div {
+  color: lime;
+}
+#special {
+  color: gray;
+}
+.orange {
+  color: orange;
+}</code></pre>
 
-					</section>
+				</section>
 
-					<section>
+				<section>
 						<h3>CSS Specificity</h3>
 
 						<p>Further reading:</p>
 
 						<p>Beginners: <a href="https://css-tricks.com/specifics-on-css-specificity/" rel="external" target="_blank">Specifics on CSS Specificity @ CSS-Tricks</a></p>
 						<p>Advanced: <a href="https://css-tricks.com/a-specificity-battle/" rel="external" target="_blank">A Specificity Battle @ CSS-Tricks</a></p>
-
-					</section>
 
 				</section>
 
@@ -412,17 +404,6 @@
 
 				<section>
 					<section>
-						<p style="margin-top: 20%">That’s a lot so far…</p>
-						<h2>Take A 5-minute Break</h2>
-						<p>Let it all sink in</p>
-
-						<aside class="notes" data-markdown>
-							Think they're doing okay? Pull up the let's develop it section instead.
-						</aside>
-
-					</section>
-
-					<section>
 						<h2>Let's Develop It!</h2>
 						<a href="http://girldevelopit.com" target="_blank"><img src="img/gdi-home.png" alt="girldevelopit.com"></a>
 						<ul>
@@ -453,9 +434,8 @@
 
 					<p>There is also a Console API that makes debugging much more streamlined than a bunch of <code>alert()</code> messages.</p>
 
-<pre><code class="js">	console.log('A debugging message to show');
-	console.warn('A fancier message!');
-</code></pre>
+<pre><code class="javascript">console.log('A debugging message to show');
+console.warn('A fancier message!');</code></pre>
 
 					<p>You can use filters to sort through the different types of messages in the console.</p>
 
@@ -528,7 +508,7 @@
 					<h3>DOM Breakpoints</h3>
 
 					<img src="img/dom-breakpoint.png" alt="DOM breakpoint screenshot" class="right"/>
-					
+
 					<p>It may be important to know when your DOM is changed by JS. You can set <strong>
 						DOM breakpoints</strong> too.</p>
 
@@ -562,18 +542,11 @@
 					<aside class="notes" data-markdown>
 						Talk about how our example is very script-heavy, but low on animations. Other things might have a lot more rendering or painting time.
 
-						Animation examples? 
+						Animation examples?
 						[http://codepen.io/juliangarnier/pen/idhuG](http://codepen.io/juliangarnier/pen/idhuG)
 						[http://mrdoob.github.io/three.js/examples/css3d_periodictable.html](http://mrdoob.github.io/three.js/examples/css3d_periodictable.html)
 
 					</aside>
-
-				</section>
-
-				<section>
-					<p style="margin-top: 20%">Is your brain full yet?</p>
-					<h2>Take Another 5-minute Break</h2>
-					<p>Let it all sink in</p>
 
 				</section>
 
@@ -689,11 +662,6 @@
 				<!-- The End -->
 				<section>
 					<h2 style="margin-top: 20%">Questions?</h2>
-					
-					<!-- CUSTOMIZE ME! -->
-					<h4 style="margin-top: 20%">Stay In Touch</h4>
-					<p><a href="http://raearnold.com">Rachael Arnold</a></p>
-					<p><small><a href="https://twitter.com/raevenfea">@raevenfea</a></small></p>
 
 					<aside class="notes" data-markdown>
 						Still have some time?
@@ -816,7 +784,7 @@
 
 			Reveal.addEventListener( 'fragmentshown', function( event ) {
 				// Example of JS debugging
-				if (event.fragment.id === "alertMe") { 
+				if (event.fragment.id === "alertMe") {
 					alert("Why isn't this working!?!");
 				}
 			}, false );
@@ -826,7 +794,7 @@
 					console.log('Switched to slide %s', event.indexh);
 					console.error("I'm not a real error, but I want to be when I grow up.");
 					console.warn(event.currentSlide.querySelector('.notes').innerText);
-				} 
+				}
 				// Example of debugger
 				else if (event.currentSlide.dataset.state == 'triggerDebugger') {
 					var myVariable = ['have','some','data'];
