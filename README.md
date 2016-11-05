@@ -4,7 +4,7 @@ Slides and course materials for GDI Atlanta's Developer Tools workshop. Develope
 
 This course is meant to be taught as a one-time, 3 hour session. It is highly recommended that students have prior knowledge of HTML, CSS, and Javascript, as knowldege of them are assumed.
 
-Slides and materials are hosted at [https://jennifer-mann.github.io/gdi-developer-tools"](https://jennifer-mann.github.io/gdi-developer-tools").
+Slides and materials are hosted at [https://jennifer-mann.github.io/gdi-developer-tools](https://jennifer-mann.github.io/gdi-developer-tools).
 
 ## Content
 
