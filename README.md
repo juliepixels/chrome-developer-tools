@@ -1,10 +1,10 @@
 # Better Web Debugging: A Developer Tools Workshop
 
-Slides and course materials for GDI Burlington’s Developer Tools workshop. Developed by Rachael Arnold, based loosely on Alexandra Hoefinger’s GDI Philly class.
+Slides and course materials for GDI Atlanta's Developer Tools workshop. Developed by Rachael Arnold of GDI Burlington, based loosely on Alexandra Hoefinger’s GDI Philly class.
 
-This course is meant to be taught as a one-night, 2.5 hour session. It is highly recommended that students have prior knowledge of HTML, CSS, and Javascript, as knowldege of them are assumed.
+This course is meant to be taught as a one-time, 3 hour session. It is highly recommended that students have prior knowledge of HTML, CSS, and Javascript, as knowldege of them are assumed.
 
-Slides and materials are hosted at [http://gdibtv.github.io/gdi-developer-tools/](http://gdibtv.github.io/gdi-developer-tools/).
+Slides and materials are hosted at [https://jennifer-mann.github.io/gdi-developer-tools"](https://jennifer-mann.github.io/gdi-developer-tools").
 
 ## Content
 
