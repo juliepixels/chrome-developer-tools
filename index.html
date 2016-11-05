@@ -433,6 +433,7 @@ console.warn('Another fancy message!');</code></pre>
 <p class="push">It's best practice to remove any Console API calls before releasing code.</p>
 				</section>
 				<section>
+				<h3>Stacks</h3>
 				<p>If a message is repeated, rather than printing every time, the messages are stacked.</p>
 
 				<pre><code>for (var i = 0; i < 10; i++) {
@@ -444,18 +445,29 @@ console.warn('Another fancy message!');</code></pre>
 }</code></pre>
 				<img src="img/console-message-stacks.png" />
 
-
-
 				</section>
 				<section>
+					<h3>Filters</h3>
 					<p>You can use filters to sort through the different types of messages in the console.</p>
 
 					<img src="img/console-filter.png" alt="Filtering the console">
 				</section>
 				<section>
-					<h3>The Console API</h3>
+					<h3>Autocomplete</h3>
+					<p>When you type in the Console, the Console automatically displays options of available or previously used methods.</p>
+					<img src="img/autocomplete.png" alt="Autocomplete console methods"/>
 
-					<p>The Console will also show messages from the browser, network issues, and actual errors in your JavaScript.</p>
+				</section>
+
+				<section>
+					<h3>Track Exceptions</h3>
+					<p>Errors in the console display with a link to the file name with a line you can navigate to.</p>
+					<img src="img/track-exceptions.png" alt="Line number and file name of exceptions"/>
+
+				</section>
+
+				<section>
+					<h3>The Console</h3>
 
 					<p>There are many ways to use the Console API, and there’s much more to learn.</p>
 					<p><a href="https://developer.chrome.com/devtools/docs/console" target="_blank">Using the Console @ Google Developer DevTools docs</a> </p>
