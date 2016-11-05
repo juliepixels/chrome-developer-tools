@@ -149,9 +149,7 @@ body {
 
 				<section>
 					<h3>Debugging, now</h3>
-
-					<img src="img/devtools-overview-screencap.png" alt="Screencap of this presentation in dev tools.">
-
+					<img width="100%" src="img/devtools-overview-screencap.png" alt="Screencap of this presentation in dev tools.">
 				</section>
 
 				<section>
@@ -196,9 +194,9 @@ body {
 
 					<p>Placement</p>
 
-					<img src="img/dock-bottom-screencap.png" alt="Screencap of panel docked to bottom of window" width="30%">
-					<img src="img/dock-right-screencap.png" alt="Screencap of panel docked to right of window" width="30%">
-					<img src="img/popout-screencap.png" alt="Screencap of panel in own window" width="30%">
+					<img class="img-border" src="img/dock-bottom-screencap.png" alt="Screencap of panel docked to bottom of window" width="30%">
+					<img class="img-border" src="img/dock-right-screencap.png" alt="Screencap of panel docked to right of window" width="30%">
+					<img class="img-border" src="img/popout-screencap.png" alt="Screencap of panel in own window" width="30%">
 
 					<aside class="notes" data-markdown>
 						Pro of right-alignment: the computed styles tab is usually visible when in Element view—very handy for CSS workflows, less important when you're focusing on JS
@@ -286,11 +284,6 @@ body {
 						<p>When an element is selected, all of the CSS rules that are applied show in the <strong>Styles</strong> section, ordered by specificity.</p>
 						<p class="push">You can see what is applied, what is overridden, and what is invalid.</p>
 
-						<aside class="notes" data-markdown>
-							Explain that at different screen breakpoints, box model and computed sections may be in a separate tab.
-
-							Press down for slides on specificity, if time allows and audience needs that level of coverage
-						</aside>
 				</section>
 				<section>
 						<h3>CSS Specificity</h3>
@@ -299,10 +292,10 @@ body {
 
 						<h4 class="push">The Basics: Where Do The Styles Live?</h4>
 						<ul>
-							<li>User Agent Stylesheet (least important)</li>
-							<li>External Stylesheet</li>
-							<li>Inline Styles / modified by JS</li>
 							<li>Anything with <code>!important</code> (most important)</li>
+							<li>Inline Styles / modified by JS</li>
+							<li>External Stylesheet</li>
+							<li>User Agent Stylesheet (least important)</li>
 						</ul>
 
 				</section>
@@ -342,8 +335,6 @@ body {
 					<img src="img/inspecting-manipulating.png" alt="Manipulating CSS attributes" class="right"/>
 
 					<p>You can manipulate CSS by changing attributes, adding them, using a color picker, and more!</p>
-
-					<p class="push">Remember, these changes aren't saved, but it's great for dialing in styles before you put them in your code.</p>
 
 				</section>
 
@@ -421,37 +412,46 @@ body {
 				</section>
 
 				<section>
-					<h3>The <strong class="yellow">Console</strong> (Tab)</h3>
+					<h3>The <strong class="yellow">Console</strong></h3>
 
-					<p>The Console allows you to interact with your page and Dev Tools through JavaScript.</p>
-					<p>At its most basic, it's a <abbr title="Read-Evaluate-Print-Loop">REPL</abbr>—you can execute basic JS commands in it.</p>
-
+					<p>The <a href="https://developers.google.com/web/tools/chrome-devtools/console">Console</a> is a JavaScript <abbr title="Read-Evaluate-Print-Loop">REPL</abbr>. You can open the <code>Console</code> tab or open it as a drawer on other tabs.</p>
 					<img src="img/console-repl.png" alt="Console as REPL">
+					<small>Press <code>Esc</code> while DevTools is focused</small>
 				</section>
 
 				<section data-state="triggerConsoleLog">
 					<h3>The Console API</h3>
 
-					<p>There is also a Console API that makes debugging much more streamlined than a bunch of <code>alert()</code> messages.</p>
+					<p>There is also a <a href="https://developers.google.com/web/tools/chrome-devtools/console/console-reference">Console API</a> that makes debugging much more streamlined than a bunch of <code>alert()</code> messages.</p>
 
 <pre><code class="javascript">console.log('A debugging message to show');
-console.warn('A fancier message!');</code></pre>
+console.info('This message shows up a little different!');
+console.warn('Another fancy message!');</code></pre>
 
+
+<pre><code class="javascript">console.clear(); // clear the console</code></pre>
+<p class="push">It's best practice to remove any Console API calls before releasing code.</p>
+				</section>
+				<section>
+				<p>If a message is repeated, rather than printing every time, the messages are stacked.</p>
+
+				<pre><code>for (var i = 0; i < 10; i++) {
+  if (i % 2 === 0) {
+    console.log("Hi");
+  } else {
+    console.log("Hey");
+  }
+}</code></pre>
+				<img src="img/console-message-stacks.png" />
+
+
+
+				</section>
+				<section>
 					<p>You can use filters to sort through the different types of messages in the console.</p>
 
 					<img src="img/console-filter.png" alt="Filtering the console">
-
-					<aside class="notes" data-markdown>
-						There's some JS attached to this slide. It'll console.warn about the notes. And throw a fake error.
-
-						Act shocked. "You're getting a view of my secret notes for this slide! Oh no!"
-
-						We can filter the various console message types.
-
-						Show the JavaScript that handles all of this.
-					</aside>
 				</section>
-
 				<section>
 					<h3>The Console API</h3>
 
@@ -459,8 +459,6 @@ console.warn('A fancier message!');</code></pre>
 
 					<p>There are many ways to use the Console API, and there’s much more to learn.</p>
 					<p><a href="https://developer.chrome.com/devtools/docs/console" target="_blank">Using the Console @ Google Developer DevTools docs</a> </p>
-
-					<p class="push"><em>Caveat Developer</em>: it's a best practice to remove any Console API calls before releasing code, because it will break your JS in browsers that don't support the Console API!</p>
 
 					<img src="img/this-image-intentionally-left-blank.png" alt="Intentional 404" style="display:none;"/>
 
@@ -684,7 +682,6 @@ console.warn('A fancier message!');</code></pre>
 			<footer>
 				<div class="copyright">
 					<!-- CUSTOMIZE ME! -->
-					Better Web Debugging: a Developer Tools Workshop -- GDI Burlington --
 					<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
 				</div>
 			</footer>
